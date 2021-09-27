@@ -14,4 +14,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-This app is deployed using firebase [here](https://developer-projects-12494.web.app/).
+This app is deployed using firebase [here](https://todolisted.web.app/).
