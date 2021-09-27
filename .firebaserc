@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "developer-projects-12494"
+  },
+  "targets": {
+    "developer-projects-12494": {
+      "hosting": {
+        "todoliste": [
+          "todolisted"
+        ]
+      }
+    }
   }
 }
