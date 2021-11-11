@@ -16,16 +16,16 @@ const Background = styled.div`
   }
 
   @keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
-  
 `;
 
-
-
 const ModalWrapper = styled.div`
-
   width: 90%;
   height: 300px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
@@ -58,10 +58,10 @@ const ModalContent = styled.div`
     text-transform: capitalize;
     font-weight: 600;
     transition: all 0.2s ease-out;
-    :hover{
-        background: #f50;
-        transition: all 0.2s ease-out;
-        color: #ededed
+    :hover {
+      background: #f50;
+      transition: all 0.2s ease-out;
+      color: #ededed;
     }
   }
 `;
@@ -84,7 +84,7 @@ const EditInput = styled.input`
   outline: none;
   width: 60%;
   color: #000;
-
+  margin: 1rem;
   @media screen and (max-width: 980px) {
     width: 240px;
   }
@@ -106,7 +106,6 @@ const Modal = ({ showModal, setShowModal }) => {
     (e) => {
       if (e.key === "Escape" && showModal) {
         setShowModal(false);
-        console.log("I pressed");
       }
     },
     [setShowModal, showModal]
@@ -123,8 +122,8 @@ const Modal = ({ showModal, setShowModal }) => {
         <Background onClick={closeModal} ref={modalRef}>
           <ModalWrapper showModal={showModal}>
             <ModalContent>
- 
-              <EditInput placeholder="zz" />
+              <EditInput placeholder="Change your Todo Text" />
+              <EditInput type="date" placeholder="Change your Todo Date" />
               <button>Save Changes</button>
             </ModalContent>
             <CloseModalButton

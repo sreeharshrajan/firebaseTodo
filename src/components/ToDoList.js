@@ -25,7 +25,6 @@ import Modal from "./Modal";
 const ToDoList = () => {
   const [todos, setTodos] = useState([{ text: "Loading...", id: "initial" }]);
   const [showModal, setShowModal] = useState(false);
-
   useEffect(() => {
     const querySnapshot = query(
       collection(db, "toDoApp"),
@@ -44,14 +43,12 @@ const ToDoList = () => {
 
   const openModal = (id) => {
     setShowModal((prev) => !prev);
-    console.log(id);
   };
 
   const fetchPrevious = () => {};
   const fetchNext = () => {};
   return (
     <>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
       <ListContainer>
         {todos.map((todo) => (
           <List key={todo.id} className="todo-row">
@@ -64,10 +61,7 @@ const ToDoList = () => {
                 className="delete-icon"
                 onClick={() => deleteDoc(doc(db, "toDoApp", todo.id))}
               />
-              <TiEdit
-                className="edit-icon"
-                onClick={() => openModal(todo.id)}
-              />
+              <TiEdit className="edit-icon" onClick={() => openModal(todo)} />
               {todo.complete ? (
                 <TiTick
                   className="tick-icon"
@@ -95,6 +89,7 @@ const ToDoList = () => {
           </PaginationIconWrapper>
         </Pagination>
       </ListContainer>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
     </>
   );
 };

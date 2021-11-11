@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { collection, serverTimestamp, addDoc } from "firebase/firestore";
 import db from "../firebaseConfig";
 
-
 const TDForm = styled.form`
-  margin-bottom: 32px;
+  margin: 1rem;
+  text-align: center;
 `;
 
 const TDInput = styled.input`
@@ -13,9 +13,8 @@ const TDInput = styled.input`
   border-radius: 15px 0 0 15px;
   border: 2px solid #fff;
   outline: none;
-  width: 60%;
+  min-width: 70%;
   color: #000;
-
   @media screen and (max-width: 980px) {
     width: 240px;
   }
@@ -45,15 +44,19 @@ const Button = styled.button`
 const ToDoForm = () => {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
-  
+
   const handleAddTodo = async (event) => {
     event.preventDefault();
-    const docRef = await addDoc(collection(db, "toDoApp"), {
-      text: input,
-      complete: false,
-      createdAt: serverTimestamp(),
-    });
-    console.log("Document written with ID: ", docRef.id);
+    if (input) {
+      const docRef = await addDoc(collection(db, "toDoApp"), {
+        text: input,
+        complete: false,
+        createdAt: serverTimestamp(),
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } else {
+      alert("Please enter a task");
+    }
 
     setTodos([...todos, input]);
     setInput("");
@@ -62,7 +65,7 @@ const ToDoForm = () => {
     <TDForm onSubmit={handleAddTodo}>
       <TDInput
         type="text"
-        placeholder="Add a task"
+        placeholder="Add New Task"
         value={input}
         onChange={(event) => setInput(event.target.value)}
         name="text"

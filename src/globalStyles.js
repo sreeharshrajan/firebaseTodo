@@ -6,15 +6,13 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+body {
   
-  body {
     background: linear-gradient(
       90deg,
       rgba(145, 214, 254, 1) 0%,
       rgba(110, 169, 259, 1) 100%
     );
-    overflow: hidden;
-    margin: 0 auto;
-    font-family: "poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
   }
-`
+`;

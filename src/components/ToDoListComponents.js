@@ -3,21 +3,23 @@ import styled from "styled-components";
 export const ListContainer = styled.div`
   min-height: 60%;
   display: contents;
+  contain: strict;
 `;
 
 export const List = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 12px auto;
+  margin: 6px auto;
   color: #000;
   background: #cbe2ff;
-
   padding: 16px;
   border-radius: 15px;
   width: 90%;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
-
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   animation: fadeIn linear 0.35s;
 
   @keyframes fadeIn {
@@ -48,25 +50,20 @@ export const Icons = styled.div`
     color: #3a0;
   }
 
-  .progress-icon{
+  .progress-icon {
     color: #fff;
   }
 `;
 
 export const Pagination = styled.div`
-  height: 7vh;
-  background: #fff;
-  margin: 20px auto;
-  border-radius: 15px;
+  margin: 12px auto;
   display: flex;
   width: 90%;
   justify-content: space-between;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 
   @media screen and (max-width: 760px) {
-    height: 15vh;
-    margin: 40px auto 1rem auto;
+    margin: 1rem auto;
   }
 `;
 
