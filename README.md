@@ -1,17 +1,20 @@
 # todoListe
 
-A simple CRUD App built using Reactjs and Firebase SDK V9.
+
 ![userinterface](https://github.com/sreeharshrajan/todoListe/blob/bb93aeee90624ca6611162044b6272b99411c16a/toDoListe.jpg)
 
-Features : You can do Create, Read, Update and Delete operations with the todo list.
+A simple and beautiful CRUD App built using Reactjs and Firebase SDK V9. Create new todo's and view them on the app. Also, update the status of the todo and also delete them.
 
-Create new todo's and view them on the app. Also, update the status of the todo and also delete them.
+## Features
+
+- Create a task
+- Mark as completed
+- Delete a task
+- Data saved through local storage 
 
 ## Available Scripts
 
-In the project directory, you can run:
-
-### `yarn start`
+In the project directory, you can run: `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
